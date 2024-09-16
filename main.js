@@ -1,4 +1,4 @@
-/*
+
 function Student(firstName, lastName, birthYear, course) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -15,12 +15,20 @@ function Student(firstName, lastName, birthYear, course) {
         this.attendance.push(attended);
         console.log("Додати відвідування");
     }
-    this.averageGrades = function(){
+    this.averageGrades = function() {
         let sum = this.grades.reduce((a, b) => a + b, 0);
-          let avg = attendedClasses / this.attendance.length;
-        console.log("Середнє відвідування: " + avg);
+        let avg = sum / this.grades.length;
+        console.log("Середня успішність: " + avg);
         return avg;
     }
+    
+    this.averageAttendance = function() {
+        let attendedClasses = this.attendance.filter(a => a).length;
+        let avgAttendance = attendedClasses / this.attendance.length;
+        console.log("Середнє відвідування: " + avgAttendance);
+        return avgAttendance;
+    }
+
     this.changeCourse = function(newCourse){
         this.course = newCourse;
         console.log("Курс змінено на: " + newCourse);
@@ -34,14 +42,9 @@ let john = new Student("John", "Snow", 1990, "PHP");
 john.informationStudent();
 john.averageGrades();
 john.averageAttendance();
-john.changeCourse("JS"); let avg = sum / this.grades.length;
-        console.log("Середня успішність: " + avg);
-        return avg;
-    }
-    this.averageAttendance = function(){
-        let attendedClasses = this.attendance.filter(a => a).length;
-     
-*/
+john.changeCourse("JS");
+    
+
 
 /*
 function Student(firstName, lastName, birthYear, courses) {
@@ -101,7 +104,7 @@ function Student(firstName, lastName, birthYear, courses) {
 */
 
 
-
+/*
 class Student {
     constructor(name, attendance, grades) {
         this.name = name;
@@ -154,4 +157,4 @@ group.getGradesRanking().forEach(student => {
     const avgGrade = student.grades.reduce((sum, grade) => sum + grade, 0) / student.grades.length;
     console.log(student.name, avgGrade);
 });
-    
+    */
